@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Data Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        input, button {
+            margin: 5px;
+        }
+
+        .graph-container {
+            margin-top: 20px;
+        }
+
+        .bar-graph {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .bar {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+
+        .bar div {
+            height: 20px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #fff;
+            padding: 0 5px;
+            border-radius: 5px;
+        }
+
+        .price-bar {
+            background-color: #4caf50;
+        }
+
+        .rating-bar {
+            background-color: #2196f3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Data Visualization</h1>
+    <div>
+        <label for="product-name">Product Name:</label>
+        <input type="text" id="product-name" placeholder="Enter product name">
+        <label for="product-price">Price:</label>
+        <input type="number" id="product-price" placeholder="Enter price" min="0">
+        <label for="product-rating">Rating:</label>
+        <input type="number" id="product-rating" placeholder="Enter rating" min="0" max="5" step="0.1">
+        <button id="add-product">Add Product</button>
+    </div>
+
+    <div>
+        <button id="sort-price">Sort by Price</button>
+        <button id="sort-rating">Sort by Rating</button>
+    </div>
+
+    <div class="graph-container">
+        <h2>Price Bar Graph</h2>
+        <div id="price-graph" class="bar-graph"></div>
+
+        <h2>Rating Bar Graph</h2>
+        <div id="rating-graph" class="bar-graph"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
